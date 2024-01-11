@@ -1,0 +1,61 @@
+/* Reset de estilos padrão para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Estilo para a barra de navegação */
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+/* Estilo para o cabeçalho "Detalhes do Usuário" */
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o cartão de detalhes do usuário */
+.card {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    margin-bottom: 8px;
+}
+
+/* Estilo para os botões */
+.btn-primary {
+    margin-top: 10px;
+}
+
+/* Estilo para o rodapé da página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+}

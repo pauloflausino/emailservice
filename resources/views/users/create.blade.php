@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.form')
 
 @section('content')
 <div class="container">
-    <h2>Adicionar Novo Usuarios</h2>
+    <h2>Adicionar Novo Usuario</h2>
 
     <form action="{{ route('users.store') }}" method="POST">
         @csrf
@@ -39,5 +39,7 @@
 
         <button type="submit" class="btn btn-primary">Adicionar Usuario</button>
     </form>
+
+    <a href="{{ route('users.index') }}" class="btn btn-primary">Voltar</a>
 </div>
 @endsection

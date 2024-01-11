@@ -1,0 +1,58 @@
+/* Reset de estilos padrão para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Estilo para a barra de navegação */
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+/* Estilo para o cabeçalho "Adicionar Novo Usuário" */
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilo para os rótulos do formulário */
+label {
+    font-weight: bold;
+}
+
+/* Estilo para os campos do formulário */
+.form-control {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Estilo para os botões */
+.btn-primary {
+    margin-top: 10px;
+}
+
+/* Estilo para o rodapé da página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+}

@@ -12,8 +12,11 @@ class UserController extends Controller
     
     public function index()
     {
-        // Apenas usuários autenticados podem listar usuários
-        //$this->authorize('viewAny', User::class);
+        // Apenas usuários autenticados podem listar usuários        
+        if(is_null(Auth::user())){            
+            return redirect()->route('login.index');
+        }
+
         if(Auth::user()->name){
             $users = User::all();
             return view('users.index', compact('users'));

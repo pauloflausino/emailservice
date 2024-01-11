@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.form')
 
 @section('content')
 <div class="container">
@@ -38,6 +38,8 @@
 
 
         <button type="submit" class="btn btn-primary">Atualizar Usuário</button>
+
+        <a href="{{ route('users.index') }}" class="btn btn-primary">Voltar</a>
     </form>
 </div>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Lista de Livros</h2>
+    <h1>Usuários</h1>
     @if(Auth::user()->user_type_enum == 1)
     <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Adicionar Novo Usuário</a>
     @endif
@@ -46,5 +46,8 @@
             @endforeach
         </tbody>
     </table>
+    @if(Auth::user()->user_type_enum == 1)
+    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Adicionar Novo Usuário</a>
+    @endif
 </div>
 @endsection

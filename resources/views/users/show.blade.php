@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.system')
 
 @section('content')
 <div class="container">
@@ -8,6 +8,8 @@
         <div class="card-body">
             <h3 class="card-title">{{ $user->name }}</h3>
             <p class="card-text"><strong>E-mail:</strong> {{ $user->email }}</p>
+            <p class="card-text"><strong>Status:</strong> @if($user->status) Ativo @else Inativo @endif </p>
+            <p class="card-text"><strong>Tipo Usuário:</strong> @if($user->user_type_enum == 1) Admin @else Comum @endif </p>
             <!-- Adicione mais campos conforme necessário -->
 
             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Editar</a>

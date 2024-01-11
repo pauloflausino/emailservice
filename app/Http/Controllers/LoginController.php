@@ -24,6 +24,7 @@ class LoginController extends Controller
             'password.required' => 'Esse campo password é obrigatório'
         ]);
 
+
         $credentials = $request->only('email', 'password');
 
         $authenticated = Auth::attempt($credentials);

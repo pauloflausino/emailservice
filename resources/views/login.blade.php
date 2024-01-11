@@ -2,8 +2,7 @@
 
 @section('content')
 
-<a href="{{route('home.index')}}"> Home </a>
-
+    
 <h2>Login</h2>
 
 @error('error')
@@ -13,7 +12,7 @@
 <form action="{{route('login.store')}}" method="post">
     @csrf
 
-<input type="text" name="email" id="email" value="rick.gemini@gmail.com">
+<input type="text" name="email" id="email" value="xframi@example.net">
 @error('email')
     <span>{{ $message }}</span>
 @enderror
