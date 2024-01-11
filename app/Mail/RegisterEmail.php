@@ -27,7 +27,7 @@ class RegisterEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Register Email',
+            subject: 'Enviando E-mail'
         );
     }
 
@@ -36,8 +36,8 @@ class RegisterEmail extends Mailable
      */
     public function content(): Content
     {
-        $aDados['Nome'] = 'Paulo H.';
-        $aDados['Idade'] = 40;
+        $aDados['Nome'] = 'Usuário Y';
+        $aDados['Idade'] = 30;
 
             return new Content(
                 view: 'Mail.registerMail', with: $aDados
