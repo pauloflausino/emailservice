@@ -21,6 +21,22 @@
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
 
+        <div class="form-group">
+            <label for="status:">Status:</label>
+            <select class="form-control" id="status:" name="status:" required>
+                <option value="1">Ativo</option>
+                <option value="0">Inativo </option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="user_type_enum">Tipo Usuário:</label>
+            <select class="form-control" id="user_type_enum" name="user_type_enum" required>
+                <option value="1">Admin</option>
+                <option value="2">Usuário Padrão </option>
+            </select>
+        </div>
+
         <button type="submit" class="btn btn-primary">Adicionar Usuario</button>
     </form>
 </div>

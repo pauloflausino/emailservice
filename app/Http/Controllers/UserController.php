@@ -14,9 +14,12 @@ class UserController extends Controller
     {
         // Apenas usuários autenticados podem listar usuários
         //$this->authorize('viewAny', User::class);
+        if(Auth::user()->name){
+            $users = User::all();
+            return view('users.index', compact('users'));
+        }
 
-        $users = User::all();
-        return view('users.index', compact('users'));
+        
     }
 
     public function create()
@@ -34,7 +37,7 @@ class UserController extends Controller
 
         // Valide os dados do formulário, se necessário
         User::create($request->all());
-        return redirect()->route('usuarios.index');
+        return redirect()->route('users.index');
     }
 
     /**
@@ -57,7 +60,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         // Apenas administradores podem editar usuários
-        $this->authorize('update', $user);
+        //$this->authorize('update', $user);
 
         // Valide os dados do formulário, se necessário
         $user->update($request->all());
@@ -73,8 +76,13 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function teste()
-    {
-        dd('entrou aki');
-    }
+    public function logout(User $user)
+    { 
+        Auth::logout();
+
+        return redirect()->route('/');
+        
+ 
+        //return redirect()->route('login.index');
+    }    
 }

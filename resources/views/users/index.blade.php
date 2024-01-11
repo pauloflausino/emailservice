@@ -3,8 +3,10 @@
 @section('content')
 <div class="container">
     <h2>Lista de Livros</h2>
+    @if(Auth::user()->user_type_enum == 1)
     <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Adicionar Novo Usuário</a>
-
+    @endif
+    
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -16,8 +18,10 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Email</th>
-                <th>Ações</th>
+                <th>Email</th>                
+                @if(Auth::user()->user_type_enum == 1)
+                    <th>Ações</th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -26,6 +30,7 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
+                    @if(Auth::user()->user_type_enum == 1)
                     <td>
                         <a href="{{ route('users.show', $user->id) }}" class="btn btn-info btn-sm">Detalhes</a>
                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm">Editar</a>
@@ -36,6 +41,7 @@
                         </form>
                         {{-- Você pode adicionar um formulário para deletar o livro se desejar --}}
                     </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>

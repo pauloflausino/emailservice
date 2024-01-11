@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -27,16 +27,27 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         $authenticated = Auth::attempt($credentials);
-
-        if(!$authenticated){
-            return redirect()->route('login.index')->withErrors(['error' => 'email or password invalid']);
+        
+        if(!$authenticated){ // Autenticação falhou
+            
+            return back()->withErrors(['email' => 'Credenciais inválidas']);
+        
+        }else {
+        
+            return redirect()->route('users.index');
+        
         }
 
     }
 
+    
     public function destroy()
-    {
-        var_dump('logout');
+    { 
+        Auth::logout();
 
-    }
+        return redirect()->route('login.index');
+        
+ 
+        //return redirect()->route('login.index');
+    }    
 }
